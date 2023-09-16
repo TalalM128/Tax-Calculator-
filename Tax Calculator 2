@@ -1,0 +1,51 @@
+#Ask user for their name
+name = input("What is your name? ")
+print("Hello " + name)
+
+#Ask user to input salary
+salary = int(input("What is your salary: "))
+
+#Constants
+ERROR = 0
+TAX1 = 0.15
+TAX2 = 0.205
+TAX3 = 0.26
+TAX4 = 0.29
+TAX5 = 0.33
+BRACKET1 = 49020
+BRACKET2 = 98040
+BRACKET3 = 151978
+BRACKET4 = 216511
+
+#Error message
+if salary < ERROR:
+  print("Sorry {}, unfortunately negative numbers do not count, please use a positive number".format(name))
+  
+#0 up to $49,020 would be 15%
+elif salary <= BRACKET1:
+    tax = salary * TAX1
+    print("Your income tax comes to ${}".format(tax))
+
+#49,020 up to 98,040 would be 20.5%
+elif salary > BRACKET1 and salary <= BRACKET2:
+    tax_1 = (salary-BRACKET1) * TAX2
+    tax_1 = round(tax_1, 2)
+    print("Your income tax comes to ${}".format(tax_1))
+
+#98,040 up to 151,978 would be 26%
+elif salary > BRACKET2 and salary <= BRACKET3:
+    tax_2 = (salary-BRACKET2) * TAX3
+    tax_2 = round(tax_2, 2)
+    print("Your income tax comes to ${}".format(tax_2))
+
+#151,978 up to 216,511 would be 29%
+elif salary > BRACKET3 and salary <= BRACKET4:
+    tax_3 = (salary-BRACKET3) * TAX4
+    tax_3 = round(tax_3, 2)
+    print("Your income tax comes to ${}".format(tax_3))
+
+#More than 216,511 would be 33%
+elif salary > BRACKET4:
+    tax_4 = (salary-BRACKET4) * TAX5
+    tax_4 = round(tax_4, 2)
+    print("Your income tax comes to ${}".format(tax_4))
