@@ -1,0 +1,35 @@
+#Ask user for their name
+name = input("What is your name?")
+print("Hello " + name)
+
+#Ask user to input salary
+salary = int(input("What is your salary"))
+
+#0 up to $49,020 would be 15%
+if salary <= 49020:
+    tax = salary * 0.15
+    print("Your income tax comes to ${}".format(tax))
+
+#49,020 up to 98,040 would be 20.5%
+elif salary > 49020 and salary <= 98040:
+    tax_1 = (salary-49020) * 0.20 
+    tax_1 = round(tax_1, 2)
+    print("Your income tax comes to ${}".format(tax_1))
+
+#98,040 up to 151,978 would be 26%
+elif salary > 98040 and salary <= 151978:
+    tax_2 = (salary-98040) * 0.26
+    tax_2 = round(tax_2, 2)
+    print("Your income tax comes to ${}".format(tax_2))
+
+#151,978 up to 216,511 would be 29%
+elif salary > 151978 and salary <= 216511:
+    tax_3 = (salary-151978) * 0.29
+    tax_3 = round(tax_3, 2)
+    print("Your income tax comes to ${}".format(tax_3))
+
+#More than 216,511 would be 33%
+elif salary > 216511:
+    tax_4 = (salary-216511) * 0.33
+    tax_4 = round(tax_4, 2)
+    print("Your income tax comes to ${}".format(tax_4))
